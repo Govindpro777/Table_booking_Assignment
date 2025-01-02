@@ -272,6 +272,14 @@ export default function BookingPage() {
 
       if (response.ok) {
         const confirmedData = await response.json();
+<<<<<<< HEAD
+=======
+        setConfirmedBooking({
+          ...bookingData,
+          date,
+        });
+        setShowConfirmation(true);
+>>>>>>> c03e2a635278c0546a91725ab7dcf915304dc14e
         
         // Convert the date string back to a Date object if necessary
         const bookingDetails: BookingDetails = {
