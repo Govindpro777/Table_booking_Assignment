@@ -7,7 +7,7 @@ const bookingRoutes = require('./routes/bookings');
 const app = express();
 
 // Environment Variables
-const PORT = process.env.PORT || 3001; // Default to 3001 if not set
+const PORT = process.env.PORT;
 const MONGODB_URL = process.env.MONGODB_URL;
 
 // Middleware
@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Connection
-mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(MONGODB_URL, )
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => {
     console.error('MongoDB connection error:', err);
