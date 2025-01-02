@@ -58,7 +58,7 @@ export default function BookingPage() {
         const confirmedData = await response.json();
         setConfirmedBooking({
           ...bookingData,
-          date: date,
+          date,
         });
         setShowConfirmation(true);
         
