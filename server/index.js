@@ -7,7 +7,7 @@ const bookingRoutes = require('./routes/bookings');
 const app = express();
 
 // Environment Variables
-const PORT = process.env.PORT || 3001; // Default to 3001 if not set
+const PORT = process.env.PORT;
 const MONGODB_URL = process.env.MONGODB_URL;
 
 // Middleware
