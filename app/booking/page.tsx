@@ -215,14 +215,14 @@ import { useToast } from '@/hooks/use-toast';
 import { CalendarIcon, Users, Clock } from 'lucide-react';
 import { BookingConfirmationDialog } from './components/BookingConfirmationDialog';
 
-// Define the type for booking details
+// Define the type for booking details with Date for `date`
 interface BookingDetails {
   name: string;
   email: string;
   phone: string;
   time: string;
   guests: number;
-  date: string;
+  date: Date;  // Use Date type
 }
 
 export default function BookingPage() {
@@ -258,7 +258,7 @@ export default function BookingPage() {
     try {
       const bookingData = {
         ...formData,
-        date: date.toISOString(),
+        date: date,  // Keep date as Date object
       };
 
       const response = await fetch('https://table-booking-assignment.onrender.com/api/bookings', {
@@ -273,7 +273,7 @@ export default function BookingPage() {
         const confirmedData = await response.json();
         setConfirmedBooking({
           ...bookingData,
-          date: date.toISOString(),
+          date: date,  // Keep date as Date object
         });
         setShowConfirmation(true);
         
@@ -412,9 +412,8 @@ export default function BookingPage() {
       <BookingConfirmationDialog
         isOpen={showConfirmation}
         onClose={() => setShowConfirmation(false)}
-        bookingDetails={confirmedBooking}
+        bookingDetails={confirmedBooking}  // Pass as Date object
       />
     </div>
   );
 }
-
