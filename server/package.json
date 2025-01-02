@@ -1,6 +1,7 @@
 {
   "name": "restaurant-booking-server",
   "version": "1.0.0",
+  "description": "A server for managing restaurant table bookings using Express and MongoDB.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -14,5 +15,12 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Govindpro777/Table_booking_Assignment.git"
+  },
+  "author": "Govind Kumar Prajapati",
+  "license": "MIT"
 }
+
